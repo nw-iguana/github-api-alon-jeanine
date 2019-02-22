@@ -30,11 +30,9 @@ function displayResults(responseJson) {
   $('#results-ul').empty();
   $('input[type="text"]').val('');
 
-  let results = responseJson.map(index => {
+  let results = responseJson.forEach(obj => {
     $('#results-ul').append(`
-    <li>Repo Name: ${index.name} <a href="${
-      index.owner.html_url
-    }">Go to repo</a>
+    <li>Repo Name: ${obj.name} <a href="${obj.owner.html_url}">Go to repo</a>
     </li>`);
   });
 
